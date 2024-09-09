@@ -1,0 +1,6 @@
+<div class="w-full flex flex-col md:gap-8">
+  <app-search />
+  <app-body
+    [posts]="(posts$ | async) ?? []" [users]="(users$ | async) ?? []"
+  />
+</div>

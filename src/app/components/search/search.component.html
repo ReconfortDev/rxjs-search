@@ -1,0 +1,25 @@
+<div class="w-full flex flex-col md:gap-4">
+  <div class="p-6 md:p-12 bg-slate-200 rounded-3xl shadow-xl hidden md:block group">
+    <h2 class="text-slate-600 font-bold">Category</h2>
+    <div
+      *ngIf="categories$ | async as categories"
+      class="w-full text-slate-400 mt-4 text-sm flex flex-wrap gap-2">
+      <button *ngFor="let category of categories"
+              [ngStyle]="{
+          'background-color': activeFiltered === category ? '#818cf8' : '#cbd5e1',
+          'color': activeFiltered === category ? 'white' : 'black'
+        }"
+              (click)="toggleCategory(category)"
+              class="px-4 py-2 rounded-lg text-xs hover:bg-indigo-400 hover:text-white duration-300 hover:scale-150">
+        {{ category }}
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="w-full p-6 md:p-12 bg-slate-100 mt-4 text-sm flex flex-col gap-4 md:gap-8 rounded-3xl shadow-xl hover:shadow-2xl duration-150 group">
+    <h2 class="text-slate-600 font-bold">Search With rxjs</h2>
+    <input [formControl]="searchControl" class="w-full p-4 border-2 rounded-xl group-hover:border-slate-300"
+           placeholder="Search anything ..."/>
+  </div>
+</div>

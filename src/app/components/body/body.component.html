@@ -1,0 +1,19 @@
+<div class="w-full flex flex-col lg:flex-row gap-8 justify-start items-start">
+  <div class="w-full lg:w-[75%] flex flex-col">
+    <div *ngIf="posts.length > 0; else noPosts"
+         class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-8 md:mt-0">
+      <h2 class="text-slate-600 font-bold md:col-span-2 lg:col-span-3">Post</h2>
+      <app-card *ngFor="let post of posts" [post]="post"/>
+    </div>
+    <ng-template #noPosts><p>No posts found.</p></ng-template>
+  </div>
+  <div class="w-full lg:w-[25%] flex flex-col">
+    <div
+      *ngIf="users.length > 0; else noUsers"
+      class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-8 mt-8 md:mt-0 bg-indigo-100/50 p-4 rounded-3xl">
+      <h2 class="text-slate-600 font-bold md:col-span-2 lg:col-span-1">Users</h2>
+      <app-user *ngFor="let user of users" [user]="user"/>
+    </div>
+    <ng-template #noUsers><p>No users found.</p></ng-template>
+  </div>
+</div>

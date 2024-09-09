@@ -1,0 +1,14 @@
+<div class="w-full rounded-2xl p-2 shadow hover:shadow-2xl duration-200 flex flex-col gap-2 group cursor-pointer">
+  <div class="flex justify-start items-center overflow-hidden h-72 rounded-xl">
+    <img
+      [src]="post.image"
+      alt="image1"
+      class="h-72 w-full object-cover"
+    />
+  </div>
+  <div class="px-2 py-3">
+    <h2 class="text-xl font-bold text-slate-600 group-hover:text-indigo-500">{{ post.title }}</h2>
+    <p class="text-slate-500 mt-2 line-clamp-3">{{ post.description }}</p>
+  </div>
+
+</div>
