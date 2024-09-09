@@ -1,6 +1,6 @@
 ## Live Link 
 
-check live App here [SearchBox](https://angular.dev/tools/cli)
+check live App here [SearchBox](https://amalisearch.netlify.app)
   
 
 ### 1. Implement Debounced Search
